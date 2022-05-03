@@ -4,20 +4,27 @@ let posY = vball.offsetTop;
 let posX = vball.offsetLeft;
 
 hitRight.style.display = 'none'
+hitDown.style.display
 
 
-//     *****UP*****
-document.addEventListener('keydown', (event) => {
+//     *****UP FUNCTION*****
+const playUp = (event) => {
     if (event.keyCode === 38){
         posX = vball.offsetLeft;
         posY = vball.offsetTop;
         vball.style.transform = `translate(0px, -500px)`
         vball.style.transition = 'all .5s'
+        //HITRIGHT STYLE
         hitRight.style.transform = 'translate(0px, -500px)'
         hitRight.style.transition = 'all .5s'
+        //HITDOWN STYLE
         hitDown.style.display = 'none'
     }
-})
+}
+document.addEventListener('keydown', playUp)
+
+
+
 //     *****RIGHT*****
 document.addEventListener('keydown', (event) => {
     if (event.keyCode === 39){
@@ -28,7 +35,7 @@ document.addEventListener('keydown', (event) => {
         hitRight.style.display = 'block'
         hitRight.style.transform = 'translate(300px, 0px'
         hitRight.style.transition = 'all .5s'
-
+        hitDown.style.display = 'none'
     }
 })
 
@@ -49,9 +56,9 @@ document.addEventListener('keydown', (event) => {
     }
 })
 
-//     *****DOWN*****
-document.addEventListener('keydown', (event) => {
-    if (event.keyCode === 40){
+//     *****DOWN FUNCTION*****
+const playDown = (event) => {
+    if (event.keyCode === 38){
         posX = vball.offsetLeft;
         posY = vball.offsetTop;
         //vball style
@@ -63,16 +70,10 @@ document.addEventListener('keydown', (event) => {
         hitRight.style.display = 'none'
         //hitDown style
         hitDown.style.display = 'block'
-        hitDown.style.transform = 'translate(0px, 0px)'
+        hitDown.style.transform = 'translate(0px, 500px)'
         hitDown.style.transition = 'all .5s'
     }
-})
+}
 
-
-document.addEventListener('keydown', (event) => {
-    if (event.keyCode === 80){
-        posY = vball.offsetTop;
-        posX = vball.offsetLeft;
-        alert(posX + ', ' + posY)
-    }
-})
+//     *****DOWN EVENT  (KEYUP PLAYUP)*****
+document.addEventListener('keyup', playDown)
