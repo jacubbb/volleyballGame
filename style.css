@@ -1,0 +1,47 @@
+.ball {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    bottom: 8px;
+    left: 46px;
+}
+
+.hit {
+    width: 6%;
+    height: auto;
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+#hitRight {
+    position: absolute;
+    left: 16px;
+    bottom: 20px;
+}
+
+p:hover {
+    color: blue;
+}
+
+#hitDown {
+    position: absolute;
+    left: 61px;
+    bottom: 98px;
+    width: 10%;
+    height: auto;
+}
+
+body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.background {
+    width: 0.1%;
+    height: auto;
+}
